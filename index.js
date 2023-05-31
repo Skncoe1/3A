@@ -1,23 +1,22 @@
-const express = require('express');
-const abc = express();
-
+const express = require("express");
 const path = require("path")
+const app = express();
 
-const PORT = 8000
 
-// abc.use(express.static(__dirname+`public`));
-// abc.use(express.static('public'));
-abc.use(`/static`,express.static("public"))
+// app.use(express.static('public'));
 
-abc.get('/', function(req,res){
-    res.send('Hiiii');
+app.get('/',function(request , response){
+    response.send('YEEEEEE');
+});
+app.get('/html',function(request , response){
+    response.sendFile(path.join(__dirname,'satpopup.html'));
+
 });
 
-abc.listen(PORT, function(){
 
-    console.log(`server listening on port::${PORT}`);
-});
-
+ app.listen(8007,function(){
+     console.log("sever chalu 150rs lega ");
+ });
 
 
 
